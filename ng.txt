@@ -1,0 +1,4 @@
++Impruve performance 
+  http://www.wrapcode.com/improve-angular-cli-build-speed-windows/
+  >npm install ember-cli-windows -g
+  >ember-cli-windows
