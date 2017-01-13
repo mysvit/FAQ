@@ -1,0 +1,3 @@
+*ngIf="teamMembers?.length > 0" - teamMembers? checks if teamMembers exists
+
+*ngIf="teamMembers != 0"        - to check whether data is present
