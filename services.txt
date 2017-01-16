@@ -2,7 +2,7 @@
 
   public dataSubject: ReplaySubject<MyClass> = new ReplaySubject<MyClass>(1);
 
-  export class AlertPaneService {
+  export class MyService {
 
   public GetData() {
     this.http.post()
@@ -20,6 +20,19 @@
     });
   }
 
+
+1.1 Subscribe Subject in other component
+
+    private myClass: MyClass;
+
+    constructor(private myService: MyService) {    }
+
+    ngOnInit() {
+        this.myService.dataSubject.subscribe(data => {
+            this.myClass = data
+        });
+    }
+    
 2. Map.
 
   public GetNotification(): Observable<MyClass> {
@@ -34,6 +47,18 @@
               return new Observable(error);
           });
   }
+  
+  1.1 Call subscribe in other component
+
+    private myClass: MyClass;
+
+    constructor(private myService: MyService) {    }
+
+    ngOnInit() {
+        this.myService.subscribe(data => {
+            this.myClass = data
+        });
+    }
 
  == General Classes ==
 
