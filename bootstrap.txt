@@ -1,0 +1,12 @@
+1. npm install ng2-bootstrap bootstrap --save
+2. open src/app/app.module.ts and add
+      import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+      ...
+      @NgModule({
+      ...
+      imports: [AlertModule, ... ],
+      ... 
+      })
+
+3. open src/app/app.component.html and add
+      <alert type="success">hello</alert>
