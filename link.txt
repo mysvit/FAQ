@@ -3,3 +3,7 @@ Typescript return array from http.post MAP SUBSCRIBE
 https://medium.com/google-developer-experts/angular-2-introduction-to-new-http-module-1278499db2a0#.hl7tvevd9
 http://stackoverflow.com/questions/37287498/return-a-list-of-custom-objects-from-an-http-get-for-use-in-an-angular-2-app
 http://stackoverflow.com/questions/37359758/http-receiving-an-array-of-objects-from-server
+
+Visual Studio Core + Angular 2
+
+http://blog.stevensanderson.com/2016/10/04/angular2-template-for-visual-studio/
