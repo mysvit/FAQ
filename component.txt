@@ -1,0 +1,8 @@
+  Date and Time
+Moment.js - https://momentjs.com/docs/#/parsing/
+
+  Observer, Subject
+rxjs - http://reactivex.io/rxjs/
+
+  Designe CSS
+bootstrap - http://getbootstrap.com/css/
