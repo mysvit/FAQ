@@ -2,7 +2,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROC [dbo].[_CopyAllTables]
+CREATE PROC [dbo].[_CopyAllTables]
 (
     @par varchar(10)
 )
