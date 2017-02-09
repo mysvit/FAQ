@@ -1,34 +1,46 @@
-import {Component, Input, Output, EventEmitter} from "@angular/core";
+import {Component, Input, Output, EventEmitter, OnInit} from "@angular/core";
 
 @Component({
   selector: 'dropdown',
   template: `
-    <ul>
-      <li *ngFor="let value of values" (click)="selectItem(value.value)">{{value.label}}</li>
-    </ul>
+    <div >
+      <label >
+        <span *ngIf="isMandatory">*</span>{{label}}
+      </label>
+      <select class="form-control" [(ngModel)]="selectedValue" (ngModelChange)="selectItem()"> 
+        <option *ngFor="let value of listValues?.items" [value]="value.itemValue">{{value.itemText}}</option>
+      </select>
+
+    </div>
   `
 })
-export class DropdownComponent {
+export class DropdownComponent implements OnInit{
   @Input()
-  values: DropdownValue[];
+  isMandatory: string;
+
+  @Input()
+  label: string;
+
+  @Input()
+  pickerId: Muid;
 
   @Output()
-  select: EventEmitter<any> = new EventEmitter();
+  onSelect: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
+  private listValues: any;
+  private selectedValue: string;
+
+  constructor(private xtBroker: BrokerService) {
   }
 
-  selectItem(value) {
-    this.select.emit(value);
+  ngOnInit() {
+    this.listValues.push({itemValue: '1', itemText: 'Text'});
+    this.listValues.push({itemValue: '2', itemText: 'Text'});
+    this.listValues.push({itemValue: '3', itemText: 'Text'});
   }
-}
 
-export class DropdownValue {
-  value:string;
-  label:string;
-
-  constructor(value:string,label:string) {
-    this.value = value;
-    this.label = label;
+  selectItem() {
+    console.log("itemValue: " + this.selectedValue);
+    this.onSelect.emit(this.selectedValue);
   }
 }
