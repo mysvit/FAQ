@@ -9,11 +9,7 @@ teamMembers.length=1 or more
 
 --------< ? >
 
-var isOptional = null;
-isOptional? false : isOptional -> false
-var isOptional = undefined;
-isOptional? false : isOptional -> false
-var isOptional = false;
-isOptional? false : isOptional -> (isOptional->false)
-var isOptional = true;
-isOptional? false : isOptional -> (isOptional->true)
+var isOptional = null or undefined
+isOptional? isOptional : false  -> false
+var isOptional = false or true
+isOptional? isOptional : false -> (isOptional->false or true)
