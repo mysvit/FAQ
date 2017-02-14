@@ -1,37 +1,41 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
 
 @Component({
-  selector: 'text',
+  selector: 'sv-text',
   template: `
-    <div class="form-group" >
+    <div class="input-group" >
       <label for="textComponent">
-        <span *ngIf="isMandatory">*</span>{{label}}
+        <span *ngIf="this.isMandatory">*</span>{{label}}
       </label>
-      <input id="textComponent" class="form-control" [(ngModel)]="selectedValue" (keyup)="onKeyUpValue()">
+      <input
+        type="text"
+        id="textComponent"
+        class="form-control text-md-left"
+        [(ngModel)]="this.selectedValue"
+        (blur)="onBlur()"
+      >
     </div>
   `
 })
 
 export class TextComponent {
   @Input()
-  isMandatory: string;
+  isMandatory: boolean;
 
   @Input()
   label: string;
 
   @Input()
-  value: string;
-
-  @Input()
-  selectedValue: string;
+  selectedValue: any;
 
   @Output()
-  onKeyUp: EventEmitter<any> = new EventEmitter();
+  onChange: EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }
 
-  onKeyUpValue() {
-    this.onKeyUp.emit(this.selectedValue);
+  private onBlur() {
+    this.onChange.emit(this.selectedValue);
   }
+
 }
