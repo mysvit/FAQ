@@ -1,16 +1,19 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
 
 @Component({
-  selector: 'dropdown',
+  selector: 'sv-dropdown',
   template: `
-    <div >
-      <label >
-        <span *ngIf="isMandatory">*</span>{{label}}
+    <div class="input-group">
+      <label for="dropdownComponent">
+        <span *ngIf="this.isMandatory">*</span>{{this.label}}
       </label>
-      <select class="form-control" [(ngModel)]="selectedValue" (ngModelChange)="selectItem()"> 
-        <option *ngFor="let value of listValues" [value]="value.value">{{value.label}}</option>
+      <select
+        id="dropdownComponent"
+        class="form-control"
+        [(ngModel)]="this.selectedValue"
+        (ngModelChange)="this.selectItem()">
+        <option *ngFor="let value of this.listValues" [value]="value.value">{{value.label}}</option>
       </select>
-
     </div>
   `
 })
@@ -34,7 +37,6 @@ export class DropdownComponent {
   }
 
   selectItem() {
-    console.log("itemValue: " + this.selectedValue);
     this.onSelect.emit(this.selectedValue);
   }
 }
