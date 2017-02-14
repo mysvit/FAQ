@@ -9,7 +9,7 @@ teamMembers.length=1 or more
 
 --------< ? >
 
-var isOptional = null or undefined or ''
-isOptional? isOptional : false  -> false
-var isOptional = false or true
-isOptional? isOptional : false -> (isOptional->false or true)
+var myVal = null or undefined or NaN or ''
+myVal? 1 : 2    -----> 2
+var myVal = false or true
+myVal? 1 : 2    -----> 1
