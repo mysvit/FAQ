@@ -1,4 +1,4 @@
----------------------------method simple ASC
+// ---------------------------method simple ASC
 
 sortArray(obj: any, orderField: string): any {
     obj.sort(function(a, b) {
@@ -9,7 +9,7 @@ sortArray(obj: any, orderField: string): any {
     return obj;
   }
   
-----------------------------Pipe complicate
+// ----------------------------Pipe complicate
 @Pipe({name: 'orderBy'})
 
 export class orderBy implements PipeTransform {
