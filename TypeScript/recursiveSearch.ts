@@ -1,3 +1,5 @@
+// Function
+
 recursiveSearch(data: any, keyObj:any ):any
 {
   var p, key, val, tRet;
@@ -33,7 +35,7 @@ recursiveSearch(data: any, keyObj:any ):any
 }
 
 
-
+// Function in prototype extension
 public recursiveSearch(keyObj: any):any  {
   var o, key, val, res;
   var arr = [];
