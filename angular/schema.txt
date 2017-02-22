@@ -1,0 +1,5 @@
+1. NGD: Angular Dependencies Graph -https://github.com/compodoc/ngd
+    -install
+      npm install -g @compodoc/ngd-cli
+    -run
+      ngd -f src\app\app.module.ts or main.ts
