@@ -3,3 +3,13 @@
       npm install -g @compodoc/ngd-cli
     -run
       ngd -f src\app\app.module.ts or main.ts
+
+CMD
+
+rem dir *module*.ts /s /b
+
+CALL ngd -t html -f  src\app\app.module.ts
+type documentation\dependencies.html > documentation\all.html
+
+CALL ngd -t html -f  src\app\my\my.module.ts
+type documentation\dependencies.html >> documentation\all.html
