@@ -11,12 +11,11 @@ import {Component, Input, Output, EventEmitter} from "@angular/core";
       <div class="input-group">
         <input
           id="datePickerComponent"
-          class="form-control xt-datepicker"
-          [placeholder]="this.principalService.currentPrincipal.userPreference.defaultDateFormat.id"
+          class="form-control"
           ngbDatepicker #d="ngbDatepicker"
           [(ngModel)]="this._selectedValue"
         />
-        <div class="input-group-addon xt-calendar-icon" (click)="d.toggle()">
+        <div class="input-group-addon" (click)="d.toggle()">
           <i class="fa fa-calendar"></i>
         </div>
       </div>
