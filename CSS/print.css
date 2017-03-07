@@ -1,0 +1,14 @@
+@media print {
+    body, body * {
+        visibility: hidden;
+        overflow: visible !important;
+        height: auto;
+    }
+    .print-show, .print-show * {
+        visibility: visible;
+    }
+    .print-hide, .print-hide * {
+        block: none !important;
+    }
+
+}
