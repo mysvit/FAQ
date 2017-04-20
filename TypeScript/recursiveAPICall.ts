@@ -1,7 +1,7 @@
   getRecursiveCall(valueID: Muid): Observable<any> {
   
     let callAndMap = (id) =>
-      this.http.locate(IApiActFlowService).GetApiFlowAction(id)
+      this.http.GetApiMethod(id)
       .map(res => {
           return {id: res.id, data: res}
       });  // map, and save the page number for recursion later.
