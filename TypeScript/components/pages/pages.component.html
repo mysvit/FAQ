@@ -1,0 +1,22 @@
+<div class="left-pages">
+  <i class="fa fa-caret-left fa-lg number" aria-hidden="true"
+     (click)="this.pageSelected(this.selectedPage - 1)">
+  </i>
+  <div class="number" *ngFor="let item of this.pagesList"
+       (click)="this.pageSelected(item)"
+       [ngClass]="{'number-selected': (this.selectedPage === item)}">
+    {{item}}
+  </div>
+  <select *ngIf="this.totalPages > this.pageSize"
+          class="select-number"
+          (change)="this.pageSelected($event.target.value)">
+    <option *ngFor="let item of this.totalPagesList">{{item}}</option>
+  </select>
+  <i class="fa fa-caret-right fa-lg number" aria-hidden="true"
+     (click)="this.pageSelected(this.selectedPage + 1)">
+  </i>
+</div>
+
+<div class="right-pages">
+  <span>{{this.getDiapason()}}</span>
+</div>
