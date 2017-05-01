@@ -11,6 +11,7 @@ export class ThumbnailSelectorPagesComponent {
     public pagesList = [];
     public totalPagesList = [];
     public selectedPage: number = 1;
+    private selectedFirstIndex: number = 0;
     public startPage: number = 1;
     public endPage: number;
     public totalPages: any;
@@ -54,13 +55,17 @@ export class ThumbnailSelectorPagesComponent {
     }
 
     private initData() {
-        // this.selectedPage = 1;
-        // this.startPage = 1;
-        this.endPage = this.pageSize;
         this.totalPages = Math.floor(this.totalItems / this.itemsOnPage);
         if ((this.totalItems % this.itemsOnPage) > 0) {
             this.totalPages += 1;
         }
+
+        if (this.selectedFirstIndex > 0) {
+            this.selectedPage = Math.floor((this.selectedFirstIndex + this.itemsOnPage) / this.itemsOnPage);
+            this.startPage = this.selectedPage;
+        }
+        this.endPage = (this.startPage + this.pageSize) - 1;
+
         this.totalPagesList = [];
         for (let i = this.startPage; i <= this.totalPages; i++) {
             this.totalPagesList.push(i);
@@ -77,6 +82,10 @@ export class ThumbnailSelectorPagesComponent {
         for (let i = this.startPage; i <= this.endPage; i++) {
             if (i > 0 && i <= this.totalPages) {
                 this.pagesList.push(i);
+            } else {
+                if (this.pagesList[0] - 1 > 0) {
+                    this.pagesList.unshift(this.pagesList[0] - 1);
+                }
             }
         }
     }
@@ -86,8 +95,9 @@ export class ThumbnailSelectorPagesComponent {
             return;
         }
         this.selectedPage = Number(num);
+        this.selectedFirstIndex = ((this.selectedPage - 1) * this.itemsOnPage);
         this.clreatePageNumbers();
-        this.onPageSelected.emit(((this.selectedPage - 1) * this.itemsOnPage));
+        this.onPageSelected.emit(this.selectedFirstIndex);
     }
 
     public getDiapason(): string {
