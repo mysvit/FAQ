@@ -63,12 +63,12 @@ export class ThumbnailSelectorPagesComponent implements OnInit {
     }
     this.selectedPage = Number(num);
     this.clreatePageNumbers();
-    this.onPageSelected.emit((this.selectedPage - 1) * this.pageSize);
+    this.onPageSelected.emit((this.selectedPage - 1) * this.itemsOnPage);
   }
 
   public getDiapason(): string {
     return ((this.selectedPage - 1) * this.pageSize)
-      + ' - ' + ((this.selectedPage - 1) * this.pageSize + this.pageSize)
+      + ' - ' + ((this.selectedPage - 1) * this.itemsOnPage + this.pageSize)
       + ' of ' + this.totalItems + ' items';
   }
 
