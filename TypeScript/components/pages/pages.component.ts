@@ -10,34 +10,40 @@ export class ThumbnailSelectorPagesComponent {
 
     public pagesList = [];
     public totalPagesList = [];
-    public selectedPage: number;
-    public startPage: number;
+    public selectedPage: number = 1;
+    public startPage: number = 1;
     public endPage: number;
     public totalPages: any;
 
     @Input()
     set totalItems(value: any) {
-        this.totalItemsValue = value;
-        this.initData();
-        this.clreatePageNumbers();
+        if (value) {
+            this.totalItemsValue = value;
+            this.initData();
+            this.clreatePageNumbers();
+        }
     }
 
     get totalItems() {
         return this.totalItemsValue;
     }
 
-    private totalItemsValue: any;
+    private totalItemsValue: number = 0;
 
     @Input()
     set itemsOnPage(value: any) {
-        this.itemsOnPageValue = value;
+        if (value) {
+            this.itemsOnPageValue = value;
+            this.initData();
+            this.clreatePageNumbers();
+        }
     }
 
     get itemsOnPage() {
         return this.itemsOnPageValue;
     }
 
-    private itemsOnPageValue: any;
+    private itemsOnPageValue: number = 0;
 
     @Input() pageSize = 5;
 
@@ -48,13 +54,14 @@ export class ThumbnailSelectorPagesComponent {
     }
 
     private initData() {
-        this.selectedPage = 1;
-        this.startPage = 1;
+        // this.selectedPage = 1;
+        // this.startPage = 1;
         this.endPage = this.pageSize;
         this.totalPages = Math.floor(this.totalItems / this.itemsOnPage);
         if ((this.totalItems % this.itemsOnPage) > 0) {
             this.totalPages += 1;
         }
+        this.totalPagesList = [];
         for (let i = this.startPage; i <= this.totalPages; i++) {
             this.totalPagesList.push(i);
         }
