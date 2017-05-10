@@ -1,8 +1,34 @@
+html, body
+{
+  width: 100%;
+  height: 100%;
 
-.center-inside {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.header {
+  background: deepskyblue;
+  flex-basis: 36px;
+}
+
+.footer {
+  background: gainsboro;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: gold;
 }
