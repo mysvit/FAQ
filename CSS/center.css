@@ -21,6 +21,7 @@ html, body
 }
 
 .footer {
+  flex-basis: 36px;
   background: gainsboro;
 }
 
