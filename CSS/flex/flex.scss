@@ -1,0 +1,35 @@
+.row-col {
+  min-height: 0;
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.row-row {
+  min-width: 0;
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.col-col {
+  min-height: 0;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-row {
+  min-width: 0;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll {
+  flex: auto;
+  overflow: auto;
+}
+
+/*safari*/
+/*display:-webkit-flex;*/
