@@ -1,0 +1,33 @@
+@import "../flex";
+
+:host {
+  @extend .col-col;
+  border: 5px dotted black;
+}
+
+.border-green {
+  margin: 20px;
+  border: 5px dotted green;
+}
+
+.my-work-class {
+  background: lightblue;
+  margin: 70px;
+  border: 5px dotted red;
+}
+
+.item {
+  min-width: 900px;
+  min-height: 500px;
+  background-color: gold;
+  margin: 50px;
+  display: inline-block; /*left margin work in scroll*/
+}
+
+.item2 {
+  min-width: 100px;
+  min-height: 600px;
+  background-color: green;
+  margin: 50px;
+  display: inline-block; /*left margin work in scroll*/
+}
