@@ -1,33 +1,12 @@
-@import "flex";
+@import "../scss/scss";
 
 :host {
-  @extend .col-col;
-  border: 5px dotted black;
+  @extend .f;
+  @extend .f-col;
+  @extend .br-black-0;
+  @extend .mm-30;
 }
 
-.border-green {
-  margin: 20px;
-  border: 5px dotted green;
-}
-
-.my-work-class {
-  background: lightblue;
-  margin: 70px;
-  border: 5px dotted red;
-}
-
-.item {
-  min-width: 900px;
-  min-height: 500px;
-  background-color: gold;
-  margin: 50px;
-  display: inline-block; /*left margin work in scroll*/
-}
-
-.item2 {
-  min-width: 100px;
-  min-height: 600px;
-  background-color: green;
-  margin: 50px;
-  display: inline-block; /*left margin work in scroll*/
+.custom {
+  background-color: map-get(map-get($colors, green-), 0);
 }
