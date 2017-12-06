@@ -7,3 +7,7 @@ http://stackoverflow.com/questions/37359758/http-receiving-an-array-of-objects-f
 === Visual Studio Core + Angular 2 ===
 
 http://blog.stevensanderson.com/2016/10/04/angular2-template-for-visual-studio/
+
+== Show/hide content in scroll ==
+
+https://github.com/jlmakes/scrollreveal
