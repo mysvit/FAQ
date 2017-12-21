@@ -4,10 +4,11 @@ https://medium.com/google-developer-experts/angular-2-introduction-to-new-http-m
 http://stackoverflow.com/questions/37287498/return-a-list-of-custom-objects-from-an-http-get-for-use-in-an-angular-2-app
 http://stackoverflow.com/questions/37359758/http-receiving-an-array-of-objects-from-server
 
-=== Visual Studio Core + Angular 2 ===
-
-http://blog.stevensanderson.com/2016/10/04/angular2-template-for-visual-studio/
 
 == Show/hide content in scroll ==
 
 https://github.com/jlmakes/scrollreveal
+
+== CSS child ==
+
+https://stackoverflow.com/questions/36527605/how-to-style-child-components-from-parent-components-css-file
