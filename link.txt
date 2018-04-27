@@ -12,3 +12,7 @@ https://github.com/jlmakes/scrollreveal
 == CSS child ==
 
 https://stackoverflow.com/questions/36527605/how-to-style-child-components-from-parent-components-css-file
+
+== mongoDB ==
+
+https://www.jenniferbland.com/saving-data-to-mongodb-database-from-node-js-application-tutorial/
