@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Buttons</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+  
+      html {
+          font-size: 16px;
+		  background-color: gray;
+      }
+      
+	 .pointer {
+		width: 100px;
+		height: 60px;
+		position: relative;
+		background: red;
+		padding-left: 40px;
+		margin-right: 10px;
+	  }
+	  .pointer:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-left: 30px solid white;
+		border-top: 30px solid transparent;
+		border-bottom: 30px solid transparent;
+		
+	  }
+	  .pointer:before {
+		content: "";
+		position: absolute;
+		right: -30px;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-left: 30px solid red;
+		border-top: 30px solid transparent;
+		border-bottom: 30px solid transparent;
+	  }
+	  
+	  .pointer:hover {
+		background-color: green;
+	  }
+
+	  .pointer:hover:before {
+		border-left: 30px solid green;
+	  }
+	  
+	  .pointer.start:after {
+		border-left: 30px solid transparent;
+	  }
+  
+	</style>
+	
+</head>
+<body>
+
+<div style="display:flex; height:60px;">
+<div class="pointer start" style="z-index: 1;">
+	text inside
+</div>
+<div class="pointer" style="z-index: 0">
+	text inside
+</div>
+</div>
+
+</body>
+</html>
