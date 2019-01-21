@@ -4,10 +4,16 @@ ffmpeg -i video.mp4 -i audio.m4a -c copy output.mp4
 // transcode to H264
 sudo ffmpeg -i video.avi -c:v libx264 -preset slow -crf 17 output.mp4
 
+// to transform to MTS
+ffmpeg -i file.mp4 -q 0 Iryna2.MTS
+
 // concat two video files
-$ cat mylist.txt
+cat mylist.txt
 file '/path/to/file1'
 file '/path/to/file2'
-file '/path/to/file3'
 
-$ ffmpeg -safe 0 -f concat -i mylist.txt -c copy output
+ffmpeg -f concat -i mylist.txt -c copy outputFile.MTS
+// for safe: use    -safe 0 
+
+// transform MTS to mp4
+ffmpeg -i inputFile.MTS -c:v libx264 -preset slow -crf 23 outputFile.mp4
