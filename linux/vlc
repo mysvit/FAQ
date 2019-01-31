@@ -16,3 +16,6 @@ cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://h
 :std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/arc7-ub1g-dadf-735a}'
 
 cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=a52,ab=128,channels=2,samplerate=44100}:std{access=rtmp,mux=ts,name=stream,mime=video/ts,dst=rtmp://a.rtmp.youtube.com/live2/arc7-ub1g-dadf-735a}'
+
+
+https://github.com/obsproject/obs-studio/wiki/Install-Instructions
