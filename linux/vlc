@@ -10,12 +10,19 @@ cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://h
 cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=a52,ab=64,channels=2,samplerate=44100}:std{access=http,mux=ffmpeg{mux=flv},dst=localhost:8080}'
 
 
---to youtube
+--to youtube c
 cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" 
 --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=a52,ab=128,channels=2,samplerate=44100}
 :std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/arc7-ub1g-dadf-735a}'
 
-cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=a52,ab=128,channels=2,samplerate=44100}:std{access=rtmp,mux=ts,name=stream,mime=video/ts,dst=rtmp://a.rtmp.youtube.com/live2/arc7-ub1g-dadf-735a}'
+logitech c822 with audio
+cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=a52,ab=128,channels=2,samplerate=44100}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/youtube_key}'
+
+logitech c822 with external audio
+cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:0,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=mp3, ab=128,channels=1,samplerate=44100}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/xxxx-xxxx-xxxx-20qu }'
+
+
 
 
 https://github.com/obsproject/obs-studio/wiki/Install-Instructions
+
