@@ -15,12 +15,14 @@ cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://h
 --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=mp3,ab=128,channels=2,samplerate=44100}
 :std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/arc7-ub1g-dadf-735a}'
 
-logitech c822 with audio
+logitech c922 with audio
 cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=a52,ab=128,channels=2,samplerate=44100}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/youtube_key}'
 
-logitech c822 with external audio
+logitech c922 with external audio - ubuntu
 cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:0,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=mp3, ab=128,channels=1,samplerate=44100}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/xxxx-xxxx-xxxx-20qu }'
 
+logitech c922 with external audio - raspberry
+cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=mp3, ab=128,channels=1,samplerate=44100}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/xxxx-xxxx-xxxx-20qu}'
 
 
 
