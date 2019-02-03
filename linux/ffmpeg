@@ -21,4 +21,4 @@ ffmpeg -i inputFile.MTS -c:v libx264 -preset slow -crf 23 outputFile.mp4
 
 // stream
 ffmpeg -f v4l2 -s 1920x1080 -r 24 -input_format yuyv422 -vcodec h264 -i /dev/video0 -f alsa -ac 2 -i hw:1,0 -f ffm http://localhost:8090/feed1.ffm
-
+ffmpeg -i /dev/video0 -vcodec libx264 -preset veryfast -maxrate 1984k -bufsize 3968k -vf "format=yuv420p" -g 60 -acodec libmp3lame -b:a 96k -ar 44100 -f flv -s 1920x1080 rtmp://a.rtmp.youtube.com/live2/xxxx-xxxx-xxxx-20qu
