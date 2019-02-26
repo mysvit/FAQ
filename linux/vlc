@@ -16,7 +16,7 @@ cvlc v4l2:///dev/video0:chroma=h264:width=640:height=420 :input-slave="alsa://hw
 --to youtube c
 cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" 
 --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=mp3,ab=128,channels=2,samplerate=44100}
-:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/arc7-ub1g-dadf-735a}'
+:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/xxx-ub1g-xxx-xxxx}'
 
 logitech c922 with audio
 cvlc v4l2:///dev/video0:chroma=h264:width=1280:height=720 :input-slave="alsa://hw:1,0" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=a52,ab=128,channels=2,samplerate=44100}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://a.rtmp.youtube.com/live2/youtube_key}'
