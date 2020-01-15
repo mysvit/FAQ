@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for f in *.mkv ; do sudo ffmpeg -i "$f" -map 0:0 -map 0:1 -map 0:3 -codec copy -codec:s mov_text "${f%.mkv}.mp4" ; done
