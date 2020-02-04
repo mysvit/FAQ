@@ -1,2 +1,1 @@
-ffmpeg -i Ru2160p.mkv -i Ukr1080p60fps.mkv -map 0:0 -c copy -map 1:1 -c copy -map 0:4 -c copy -map 0:5 -c copy -map 1:2 -c copy -map 0:10 -c copy -map 0:11 -c copy -c copy 2160.mkv
-
+ffmpeg -i ru2160p.mkv -i ukrJ.mkv -map 0:0 -c copy -map 1:1 -c copy -map 0:5 -c copy -map 0:6 -c copy -map 0:9 -c copy 2160.mkv
