@@ -12,7 +12,7 @@ cat mylist.txt
 file '/path/to/file1'
 file '/path/to/file2'
 
-ffmpeg -f concat -i mylist.txt -c copy outputFile.MTS
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy outputFile.mp4
 // for safe: use    -safe 0 
 
 // transform MTS to mp4
