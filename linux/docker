@@ -1,4 +1,5 @@
 # Run interaction for debian bash.
+# The -i means "run interactively", and -t means "allocate a pseudo-tty".
 docker run -it debian /bin/bash
 
 # Show processes in docker and last run 
