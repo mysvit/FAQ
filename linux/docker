@@ -1,0 +1,5 @@
+# Run interaction for debian bash.
+docker run -it debian /bin/bash
+
+# Show processes in docker and last run 
+docker ps -l
