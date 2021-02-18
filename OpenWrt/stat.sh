@@ -9,3 +9,4 @@ cat /proc/net/nf_conntrack | grep tcp
 
 @restart dhcp
 /etc/init.d/dnsmasq restart
+/etc/init.d/odhcpd restart
