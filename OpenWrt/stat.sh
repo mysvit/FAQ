@@ -9,7 +9,7 @@ opkg install tcpdump-mini
 cat /proc/net/nf_conntrack | grep tcp
 
 #restart dhcp
-/etc/init.d/adblock restart
+/etc/init.d/dnsmasq restart
 /etc/init.d/odhcpd restart
 #resatr addblock
 /etc/init.d/adblock restart
