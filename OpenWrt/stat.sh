@@ -9,6 +9,7 @@ opkg install tcpdump-mini
 cat /proc/net/nf_conntrack | grep tcp
 
 #restart dhcp
+vi /etc/config/dhcp
 /etc/init.d/dnsmasq restart
 /etc/init.d/odhcpd restart
 #resatr addblock
