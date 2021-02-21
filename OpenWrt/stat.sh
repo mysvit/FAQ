@@ -15,3 +15,6 @@ vi /etc/config/dhcp
 #resatr addblock
 /etc/init.d/adblock restart
  
+#firewall
+vi /etc/config/firewall
+service firewall restart
