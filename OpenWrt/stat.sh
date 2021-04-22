@@ -18,3 +18,6 @@ vi /etc/config/dhcp
 #firewall
 vi /etc/config/firewall
 service firewall restart
+
+#network and DNS
+vi /etc/config/network
