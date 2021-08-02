@@ -21,3 +21,18 @@ service firewall restart
 
 #network and DNS
 vi /etc/config/network
+
+
+#Automount the partition
+#Generate a config entry for the fstab file:
+block detect | uci import fstab
+#Now enable automount on that config entry:
+uci set fstab.@mount[-1].enabled='1'
+uci commit fstab
+#Optionally enable autocheck of the file system each time the OpenWrt device powers up:
+uci set fstab.@global[0].check_fs='1'
+uci commit fstab
+#Reboot your OpenWrt device (to verify that automount works)
+#After the reboot, check your results: Run
+uci show fstab
+
