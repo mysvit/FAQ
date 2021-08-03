@@ -36,3 +36,11 @@ uci commit fstab
 #After the reboot, check your results: Run
 uci show fstab
 
+##################
+# User Add
+opkg install shadow-useradd
+useradd USER
+passwd USER
+
+##################
+#
