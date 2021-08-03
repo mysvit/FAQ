@@ -43,4 +43,5 @@ useradd USER
 passwd USER
 
 ##################
-#
+# Add samba password to user
+smbpasswd -a USER
