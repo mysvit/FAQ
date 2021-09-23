@@ -1,6 +1,8 @@
 # add extra firmware
 
 https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/about/
+apt install make
+apt install python
 make check
 make install
 reboot
