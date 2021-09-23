@@ -7,7 +7,9 @@ make check
 make install
 reboot
 
-# add grub windows 
+###############################
+# add windows to grub
+if windows boot under UEFI install linux under UEFI too
 
 # run
 blkid
