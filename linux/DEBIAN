@@ -1,0 +1,23 @@
+# add extra firmware
+
+https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/about/
+make check
+make install
+reboot
+
+# add grub windows 
+
+# run
+blkid
+
+find UUI for PARTLABEL="EFI system partition"
+UUID="384F-5ECE" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI system partition" 
+
+# add to /etc/grub.d/ 40_custom
+menuentry 'Windows 10' {
+    search --fs-uuid --no-floppy --set=root CC66-4B02
+    chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi
+}
+
+# run
+update-grub
