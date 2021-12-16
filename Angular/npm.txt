@@ -1,6 +1,0 @@
-- UPDATE TO LATES VERSION
-
-npm i -g npm-check-updates
-npm-check-updates -u (ncu -u)
-ncu -n -u - latest
-npm install
