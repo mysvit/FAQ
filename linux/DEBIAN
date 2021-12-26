@@ -1,4 +1,4 @@
-# add extra firmware
+################################ add extra firmware
 
 https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/about/\
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git
@@ -8,8 +8,8 @@ make check
 make install
 reboot
 
-###############################
-# add windows to grub
+################################ add windows to grub
+
 if windows boot under UEFI install linux under UEFI too
 
 # run
@@ -26,3 +26,7 @@ menuentry 'Windows 10' {
 
 # run
 update-grub
+
+################################ bluetooth boom
+
+apt install pulseaudio-module-bluetooth
