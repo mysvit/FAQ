@@ -8,6 +8,15 @@ make check
 make install
 reboot
 
+################################ add radeon 300
+
+Add [non-free]
+deb http://deb.debian.org/debian/ buster main contrib non-free
+deb-src http://deb.debian.org/debian/ buster main contrib non-free
+
+sudo apt update
+sudo apt install firmware-amd-graphics
+
 ################################ add windows to grub
 
 if windows boot under UEFI install linux under UEFI too
