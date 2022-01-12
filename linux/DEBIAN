@@ -46,3 +46,13 @@ apt install mesa-utils
 #run on user permittion not root
 glxinfo | egrep "OpenGL vendor|OpenGL renderer"
 
+############################## gui xrandr - ARandR
+# configure two screen
+
+apt install arandr
+
+############################## configure NVIDIA
+https://wiki.debian.org/NVIDIA%20Optimus
+
+
+
