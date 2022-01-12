@@ -39,3 +39,10 @@ update-grub
 ################################ bluetooth boom
 
 apt install pulseaudio-module-bluetooth
+
+############################### nvidia driver info - glxinfo
+
+apt install mesa-utils
+#run on user permittion not root
+glxinfo | egrep "OpenGL vendor|OpenGL renderer"
+
