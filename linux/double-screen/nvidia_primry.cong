@@ -1,9 +1,9 @@
 # https://wiki.debian.org/NVIDIA%20Optimus
 # https://wiki.archlinux.org/title/NVIDIA_Optimus#Using_PRIME_render_offload
+
 # X config
 # /etc/X11/xorg.conf.d/nvidia_primry.cong
 # use external video card -  nvidia
-
 Section "OutputClass"
     Identifier "intel"
     Driver "modesetting"
