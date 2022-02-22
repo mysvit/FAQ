@@ -1,0 +1,17 @@
+### sddm display manager
+#/usr/share/sddm/scripts/Xsetup
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+xrandr --dpi 157
+#default dpi 96
+
+
+### ARANDR ## tools to create xrandr command
+arandr
+
+# xrandr - show displays
+# two displays
+#xrandr --output DP-0 --off --output DP-1 --off --output HDMI-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output eDP-1-1 --mode 1920x1080 --pos >
+# two displays
+#xrandr --output DP-0 --off --output DP-1 --off --output HDMI-0 --off --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
