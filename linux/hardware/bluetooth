@@ -1,0 +1,4 @@
+################################ bluetooth boom
+
+apt install pulseaudio-module-bluetooth
+
