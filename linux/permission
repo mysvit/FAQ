@@ -1,9 +1,0 @@
--- PERMISSION
--- list all files with permission
-ls -la
--- set permission for all directory
-find /home/user/dir -type d -exec chmod 755 {} \;
--- set permission for all files
-find /home/user/dir -type f -exec chmod 664 {} \;
--- set owner
-find /home/user/dir -exec chown user:group {} \;
