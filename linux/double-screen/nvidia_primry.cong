@@ -1,0 +1,17 @@
+# X config
+# /etc/X11/xorg.conf.d/nvidia_primry.cong
+# use external video card -  nvidia
+Section "OutputClass"
+    Identifier "intel"
+    Driver "modesetting"
+EndSection
+
+Section "OutputClass"
+    Identifier "nvidia"
+    MatchDriver "nvidia-drm"
+    Driver "nvidia"
+    Option "AllowEmptyInitialConfiguration"
+    Option "PrimaryGPU" "yes"
+    ModulePath "/usr/lib/nvidia/xorg"
+    ModulePath "/usr/lib/xorg/modules"
+EndSection
