@@ -1,0 +1,7 @@
+Add [non-free]
+deb http://deb.debian.org/debian/ buster main contrib non-free
+deb-src http://deb.debian.org/debian/ buster main contrib non-free
+
+sudo apt update
+sudo apt install firmware-amd-graphics
+
