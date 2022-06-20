@@ -1,15 +1,19 @@
-# Webstorm
-
+sudo apt-get update;
+sudo apt-get install ca-certificates wget gnupg lsb-release;
 
 # Google Chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google-chrome-stable_current_amd64.deb;
-sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb;
-sudo rm /tmp/google-chrome-stable_current_amd64.deb;
+wget -qO- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo dd /usr/share/keyrings/google.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/google.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
+ | sudo dd /etc/apt/sources.list.d/google-chrome.list;
+sudo apt update;
+sudo apt install -y google-chrome-stable;
 
 # Opera
-wget https://download3.operacdn.com/pub/opera/desktop/88.0.4412.40/linux/opera-stable_88.0.4412.40_amd64.deb -O /tmp/opera-stable_88.0.4412.40_amd64.deb;
-sudo dpkg -i /tmp/opera-stable_88.0.4412.40_amd64.deb;
-sudo rm /tmp/opera-stable_88.0.4412.40_amd64.deb;
+wget -qO- https://deb.opera.com/archive.key | gpg --dearmor | sudo dd /usr/share/keyrings/opera-browser.gpg;
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/opera-browser.gpg] https://deb.opera.com/opera-stable/ stable non-free" \
+ | sudo dd /etc/apt/sources.list.d/opera-stable.list;
+sudo apt-get update;
+sudo apt-get install opera-stable;
 
 # Webstorm - download and unpack to ~/soft/webstorm
 # from app luncher add to Favorites and TaskManager
@@ -36,16 +40,9 @@ X-KDE-Username=
 EOF
 
 # Docker
-sudo apt-get update;
-sudo apt-get install ca-certificates wget gnupg lsb-release;
-# Add Docker’s official GPG key:
-sudo mkdir -p /etc/apt/keyrings;
-wget -qO- https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg;
-# Set up the repository
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null;
-# Install Docker Engine
+wget -qO- https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo dd /usr/share/keyrings/docker.gpg;
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+  | sudo dd /etc/apt/sources.list.d/docker.list;
 sudo apt-get update;
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin;
 
