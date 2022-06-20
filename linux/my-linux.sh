@@ -33,26 +33,19 @@ X-KDE-Username=
 EOF;
 bash ~/soft/webstorm/bin/webstorm.sh
 
-# Google Chrome
-wget -qO- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo dd of=/usr/share/keyrings/google.gpg;
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/google.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
- | sudo dd of=/etc/apt/sources.list.d/google-chrome.list;
-sudo apt update;
-sudo apt install -y google-chrome-stable;
-
-# Opera
-wget -qO- https://deb.opera.com/archive.key | gpg --dearmor | sudo dd of=/usr/share/keyrings/opera-browser.gpg;
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/opera-browser.gpg] https://deb.opera.com/opera-stable/ stable non-free" \
- | sudo dd of=/etc/apt/sources.list.d/opera-stable.list;
-sudo apt-get update;
-sudo apt-get install opera-stable;
-
 # DBeaver
 wget -qO- https://dbeaver.io/debs/dbeaver.gpg.key | gpg --dearmor | sudo dd of=/usr/share/keyrings/dbeaver.gpg;
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/dbeaver.gpg] https://dbeaver.io/debs/dbeaver-ce /" | sudo dd of=/etc/apt/sources.list.d/dbeaver.list;
 sudo apt-get update;
 sudo apt -y install default-jdk;
 sudo apt -y install dbeaver-ce;
+
+# Google Chrome
+wget -qO- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo dd of=/usr/share/keyrings/google.gpg;
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/google.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
+ | sudo dd of=/etc/apt/sources.list.d/google-chrome.list;
+sudo apt update;
+sudo apt install -y google-chrome-stable;
 
 #Mozilla
 sudo apt remove thunderbird/jammy
@@ -62,11 +55,18 @@ gpg --export --keyserver keyserver.ubuntu.com A6DCF7707EBC211F | sudo dd of=/usr
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mozilla.gpg] http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu $(lsb_release -cs) main" | sudo dd of=/etc/apt/sources.list.d/mozilla.list;
 sudo apt install firefox
 
+# Opera
+wget -qO- https://deb.opera.com/archive.key | gpg --dearmor | sudo dd of=/usr/share/keyrings/opera-browser.gpg;
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/opera-browser.gpg] https://deb.opera.com/opera-stable/ stable non-free" \
+ | sudo dd of=/etc/apt/sources.list.d/opera-stable.list;
+sudo apt-get update;
+sudo apt-get install opera-stable;
+
 # Docker
 wget -qO- https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/docker.gpg;
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
   | sudo dd of=/etc/apt/sources.list.d/docker.list;
 sudo apt-get update;
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin;
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin;
 
 
