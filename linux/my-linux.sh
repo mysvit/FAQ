@@ -8,8 +8,7 @@ wget https://download.jetbrains.com/webstorm/WebStorm-2022.1.2.tar.gz -O ~/soft/
 mkdir -p ~/soft/webstorm;
 tar -xvf ~/soft/WebStorm-2022.1.2.tar.gz -C ~/soft/webstorm --strip-components=1;
 # from app luncher add to Favorites and TaskManager
-mkdir -P ~/.local/share/applications
-
+mkdir -P ~/.local/share/applications;
 tee -a ~/.local/share/applications/webstorm.desktop <<EOF
 [Desktop Entry]
 Comment[en_US]=
@@ -30,7 +29,7 @@ X-DBUS-ServiceName=
 X-DBUS-StartupType=
 X-KDE-SubstituteUID=false
 X-KDE-Username=
-EOF
+EOF;
 bash ~/soft/webstorm/bin/webstorm.sh
 
 # Google Chrome
