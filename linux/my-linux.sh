@@ -48,12 +48,12 @@ sudo apt update;
 sudo apt install -y google-chrome-stable;
 
 #Mozilla
-sudo apt remove thunderbird/jammy
-#gpg --recv-keys --keyserver keyserver.ubuntu.com A6DCF7707EBC211F
-#gpg --export A6DCF7707EBC211F | sudo dd of=/usr/share/keyrings/mozilla.gpg
-gpg --export --keyserver keyserver.ubuntu.com A6DCF7707EBC211F | sudo dd of=/usr/share/keyrings/mozilla.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mozilla.gpg] http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu $(lsb_release -cs) main" | sudo dd of=/etc/apt/sources.list.d/mozilla.list;
-sudo apt install firefox
+sudo apt remove -y thunderbird/jammy;
+gpg --recv-keys --keyserver keyserver.ubuntu.com A6DCF7707EBC211F
+gpg --export A6DCF7707EBC211F | sudo dd of=/usr/share/keyrings/mozilla.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mozilla.gpg] http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu $(lsb_release -cs) main" \
+  | sudo dd of=/etc/apt/sources.list.d/mozilla.list;
+sudo apt install firefox;
 
 # Opera
 wget -qO- https://deb.opera.com/archive.key | gpg --dearmor | sudo dd of=/usr/share/keyrings/opera-browser.gpg;
