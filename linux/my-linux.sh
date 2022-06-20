@@ -15,6 +15,12 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/opera
 sudo apt-get update;
 sudo apt-get install opera-stable;
 
+# DBeaver
+wget -qO- https://dbeaver.io/debs/dbeaver.gpg.key | gpg --dearmor | sudo dd of=/usr/share/keyrings/dbeaver.gpg;
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo dd of=/etc/apt/sources.list.d/dbeaver.list
+sudo apt-get update;
+sudo apt -y install default-jdk dbeaver-ce
+
 # Webstorm - download and unpack to ~/soft/webstorm
 # from app luncher add to Favorites and TaskManager
 tee -a /home/sv/.local/share/applications/webstorm.desktop <<EOF
