@@ -1,6 +1,7 @@
 sudo apt-get update;
 sudo apt-get install ca-certificates wget gnupg lsb-release;
-
+#tmux (xclip), #Chromium browser, #doublecmd
+sudo apt-get install -y tmux xclip doublecmd chromium-browser;
 
 # Webstorm - download and unpack to ~/soft/webstorm
 mkdir ~/soft;
@@ -61,11 +62,6 @@ gpg --export --keyserver keyserver.ubuntu.com A6DCF7707EBC211F | sudo dd of=/usr
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mozilla.gpg] http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu $(lsb_release -cs) main" | sudo dd of=/etc/apt/sources.list.d/mozilla.list;
 sudo apt install firefox
 
-# Chromium browser
-sudo apt install chromium-browser
-
-
-
 # Docker
 wget -qO- https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/docker.gpg;
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
@@ -73,5 +69,4 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 sudo apt-get update;
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin;
 
-#tmux
-sudo apt-get install tmux xclip doublecmd;
+
