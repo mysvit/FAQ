@@ -1,7 +1,7 @@
 sudo apt-get update;
 sudo apt-get install ca-certificates wget gnupg lsb-release;
 #tmux (xclip), #Chromium browser, #doublecmd
-sudo apt-get install -y tmux xclip doublecmd chromium-browser;
+sudo apt-get install -y tmux xclip doublecmd-qt chromium-browser;
 
 # Webstorm - download and unpack to ~/soft/webstorm
 mkdir ~/soft;
