@@ -7,3 +7,8 @@ ffmpeg -y -i 2000.mkv \
 -metadata:s:v:0 title="Title (2000)" -metadata:s:v:0 date="2000" \
 -metadata:s:a:2 language=eng -metadata:s:a:2 title="English | AC3 5.1" \
 2000.mkv
+
+#audio
+-map 0:2 -c:a ac3 -b:a 640k \
+#video
+-map 0:0 -c:v libx264 -preset veryslow -crf 18 \
