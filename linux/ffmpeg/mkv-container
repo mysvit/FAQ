@@ -9,6 +9,26 @@ ffmpeg -y -i 2000.mkv \
 2000.mkv
 
 #audio
+# 5.1
 -map 0:2 -c:a ac3 -b:a 640k \
-#video
+# stereo
+-map 0:2 -c:a ac3 -b:a 192k
+# extract audio aac
+ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac
+
+# video
+# h264
 -map 0:0 -c:v libx264 -preset veryslow -crf 18 \
+# h265
+-map 0:0 -c:v libx265 -preset ultrafast -x265-params crf=22:qcomp=0.8:aq-mode=1:aq_strength=1.0:qg-size=16:psy-rd=0.7:psy-rdoq=5.0:rdoq-level=1:merange=44
+
+# multi vob to one
+cat *.VOB > output.vob
+
+# apply ffmpeg to multiple .avi files
+for f in *.avi ; do \
+    ffmpeg -i "$f" \
+    -metadata:s:a:0 language=ukr -metadata:s:a:0 title="Ukrainian Stereo" \
+    -codec:v libx264 -preset slow -crf 21 \
+    "${f%.avi}.mp4";\
+done
