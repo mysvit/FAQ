@@ -1,0 +1,9 @@
+ffmpeg -y -i 2000.mkv \
+-map 0:0 -c:v copy \
+-map 0:1 -c:a copy \
+-map 0:2 -c:a ac3 -b:a 640k \
+-map 0:4 -c:s copy \
+-map 0:5 -c:s copy \
+-metadata:s:v:0 title="Title (2000)" -metadata:s:v:0 date="2000" \
+-metadata:s:a:2 language=eng -metadata:s:a:2 title="English | AC3 5.1" \
+2000.mkv
