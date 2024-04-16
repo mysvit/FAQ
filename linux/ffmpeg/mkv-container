@@ -1,3 +1,20 @@
+# export ac3 audio
+ffmpeg -y -i mm.mkv -map 0:2 -codec:a copy ae.ac3
+# export str
+ffmpeg -y -i mm.mkv -map 0:4 -codec:s copy "NAME FILE.eng.default.srt"
+
+# delay -0.9s
+-itsoffset -0.9
+
+# copy
+ffmpeg -y -fflags +genpts -i mm.mkv -itsoffset -0.9 -i ae.ac3 \
+-map 0:0 -metadata title="Mad Max: Fury Road" -metadata date="2015" \
+-map 1:0 -metadata:s:a:0 language=eng -metadata:s:a:0 title="English 5.1" -disposition:a:0 default \
+-map 0:1 -metadata:s:a:1 language=ukr -metadata:s:a:1 title="Ukrainian 5.1" \
+-codec:v copy -codec:a copy -codec:s copy "FILE NAME.mkv"
+
+
+
 ffmpeg -y -i 2000.mkv \
 -map 0:0 -c:v copy \
 -map 0:1 -c:a copy \
