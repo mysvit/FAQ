@@ -1,0 +1,14 @@
+Put the following in ~/.config/GIMP/2.10/scripts/heic_jpg.scm
+
+(define (heic_jpg in_filename out_filename)
+    (let* (
+            (image (car (gimp-file-load RUN-NONINTERACTIVE in_filename in_filename)))
+            (drawable (car (gimp-image-get-active-layer image)))
+        )
+        (gimp-file-save RUN-NONINTERACTIVE image drawable out_filename out_filename)
+        (gimp-image-delete image)
+    )
+)
+
+run in image folder
+for A in * ; do gimp -i -b "(heic_jpg \"$A\" \"$A.jpg\")" -b '(gimp-quit 0)' ; done
